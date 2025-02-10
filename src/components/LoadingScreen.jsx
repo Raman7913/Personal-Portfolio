@@ -7,7 +7,7 @@ const LoadingScreen = ({ onComplete }) => {
     useEffect(() => {
         let index = 0;
 
-        const loadingFucn = () => {
+        const loadingFunc = () => {
             if (index < fullText.length) {
                 const currentLetter = fullText[index];
                 setText((prevText) => {
@@ -20,7 +20,7 @@ const LoadingScreen = ({ onComplete }) => {
                 }, 500);
             }
         };
-        const interval = setInterval(loadingFucn, 100);
+        const interval = setInterval(loadingFunc, 100);
         return () => clearInterval(interval);
     }, []);
     return (
