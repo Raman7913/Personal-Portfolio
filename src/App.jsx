@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import MobileMenu from "./components/MobileMenu";
+import Home from "./components/sections/Home";
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -14,10 +15,10 @@ const App = () => {
                     loading ? "opacity-0" : "opacity-100"
                 } bg-black text-gray-100`}
             >
-                hello
+                <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                <Home />
             </div>
-            <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         </>
     );
 };

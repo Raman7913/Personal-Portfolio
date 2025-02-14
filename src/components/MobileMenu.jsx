@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 
 const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <>
             <div
